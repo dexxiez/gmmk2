@@ -53,7 +53,8 @@ $(OUT).hex: $(OUT).elf
 	@$(OBJCOPY) -O ihex $< $@
 
 flash: $(OUT).bin
-	wb32-dfu-updater_cli -D $< && wb32-dfu-updater_cli -R
+	@echo "Waiting for DFU device, put keyboard into bootloader..."
+	wb32-dfu-updater_cli -w -D $< && wb32-dfu-updater_cli -R
 
 KEYMAPS := $(notdir $(wildcard src/keymaps/*))
 
