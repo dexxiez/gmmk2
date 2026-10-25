@@ -1,0 +1,18 @@
+# clangd parses with clang, so point it at the arm-none-eabi-gcc system headers
+# (from `arm-none-eabi-gcc -xc -E -Wp,-v /dev/null`; update if gcc is upgraded).
+CompileFlags:
+  Add:
+    - --target=arm-none-eabi
+    - -isystem/usr/lib/gcc/arm-none-eabi/15.2.0/include
+    - -isystem/usr/lib/gcc/arm-none-eabi/15.2.0/include-fixed
+    - -isystem/usr/arm-none-eabi/include
+    - -Wno-unknown-attributes
+    - -Wno-unknown-warning-option
+  Remove: [-W*, -mno-unaligned-access, -mno-thumb-interwork, -fno-builtin-printf]
+Diagnostics:
+  UnusedIncludes: None
+---
+If:
+  PathMatch: vendor/.*
+Diagnostics:
+  Suppress: "*"
