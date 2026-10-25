@@ -15,7 +15,6 @@
  */
 
 #include "layout.h"
-#include "keymap_config.h"
 #include "layers.h"
 #include "bg_cycle.h"
 #include "f_cycle.h"

@@ -19,7 +19,7 @@
  * generator plugin. Do not edit manually.
  */
 
-#include "hal.h"
+#include "hal.h" // IWYU pragma: keep
 
 /*===========================================================================*/
 /* Driver local definitions.                                                 */
