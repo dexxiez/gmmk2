@@ -5,6 +5,9 @@
 #   make compiledb           compile_commands.json for clangd, all keymaps (needs bear)
 #   make clean
 
+# Automatically enable parallel builds matching available CPU cores
+MAKEFLAGS += -j$(shell nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
+
 KEYMAP ?= dexxiez
 
 TOOLCHAIN ?= arm-none-eabi-
