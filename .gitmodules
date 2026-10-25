@@ -1,4 +1,8 @@
 [submodule "vendor/chibios"]
 	path = vendor/chibios
-    url = git@github.com:chibios-upstream/chibios.git
-    branch = stable-21.11.x
+	url = git@github.com:chibios-upstream/chibios.git
+	branch = stable-21.11.x
+[submodule "vendor/chibios-contrib"]
+	path = vendor/chibios-contrib
+	url = https://github.com/ChibiOS/ChibiOS-Contrib
+	branch = chibios-21.11.x
